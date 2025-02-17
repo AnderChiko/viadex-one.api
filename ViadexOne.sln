@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViadexOne.Api", "api\ViadexOne.Api\ViadexOne.Api.csproj", "{9F3D7C32-C1AB-402F-9FAE-ECC47463263B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViadexOne.Core", "core\ViadexOne.Core\ViadexOne.Core.csproj", "{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F3D7C32-C1AB-402F-9FAE-ECC47463263B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3D7C32-C1AB-402F-9FAE-ECC47463263B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3D7C32-C1AB-402F-9FAE-ECC47463263B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3D7C32-C1AB-402F-9FAE-ECC47463263B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4D1CA08A-8DB7-4E20-BAE8-5BF436DE579E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {310ED118-84E0-4FA1-9FFC-2E2DD6C2F871}
+	EndGlobalSection
+EndGlobal
