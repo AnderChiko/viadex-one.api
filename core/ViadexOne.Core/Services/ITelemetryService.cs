@@ -14,12 +14,12 @@ namespace ViadexOne.Core.Services
         /// Get Device Telemetry
         /// </summary>
         /// <returns></returns>
-        Task<TelemetryResponse> GetDeviceTelemetry();
+        Task<DeviceResponse> GetDevices();
 
         /// <summary>
         /// Get Experience Data
         /// </summary>
         /// <returns></returns>
-        Task<TelemetryResponse> GetExperienceData();
+        Task<TelemetryResponse> GetDeviceData();
     }
 }

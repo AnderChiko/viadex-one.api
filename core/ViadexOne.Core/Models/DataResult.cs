@@ -11,7 +11,7 @@ namespace ViadexOne.Core.Models
     {
         public Status Status { get; set; }
 
-        public T? Data { get; set; }
+        public T? Entry { get; set; }
 
         public ErrorModel? Error { get; set; }
 
@@ -22,7 +22,7 @@ namespace ViadexOne.Core.Models
         public DataResult(T data)
         {
             this.Status = Status.Success;
-            this.Data = data;
+            this.Entry = data;
         }
     }
 }

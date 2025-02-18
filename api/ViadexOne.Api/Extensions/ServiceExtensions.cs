@@ -13,6 +13,14 @@ namespace ViadexOne.Api.Extensions
 
             services.AddCoreServices();
 
+            services.AddCors(options =>
+             {
+                 options.AddPolicy("AllowSpecificOrigin",
+                     policy => policy.WithOrigins("http://localhost:8080")  // Add your allowed origins
+                                     .AllowAnyHeader()
+                                     .AllowAnyMethod());
+             });
+
             return services;
         }
     }

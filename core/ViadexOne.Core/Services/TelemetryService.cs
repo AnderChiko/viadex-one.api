@@ -1,4 +1,5 @@
-﻿using ViadexOne.Core.Models;
+﻿using ViadexOne.Core.Data;
+using ViadexOne.Core.Models;
 using ViadexOne.Core.Models.Responses;
 
 namespace ViadexOne.Core.Services
@@ -8,47 +9,29 @@ namespace ViadexOne.Core.Services
         public TelemetryService() { }
 
         //inherit doc
-        public async Task<TelemetryResponse> GetDeviceTelemetry()
+        public async Task<DeviceResponse> GetDevices()
         {
             await Task.Delay(1);
-            // sample data 
-            var data = new ChartData
-            {
-                Labels = new[] { "CPU", "Memory", "Disk" },
-                Datasets = new Dataset[]
-               {
-                    new Dataset
-                    {
-                        Label = "Usage (%)",
-                        Data = new[] { 65, 45, 80 },
-                        BackgroundColor = new[] { "#4F46E5", "#3B82F6", "#22C55E" }
-                    }
-               }
-            };
-
-            return new TelemetryResponse { Data = data };
+            var listDevices = await Task.FromResult(DeviceTelemetryData.DevicesTelemetry);
+            return new DeviceResponse { Entry = DeviceTelemetryData.DevicesTelemetry };
         }
 
         //inherit doc
-        public async Task<TelemetryResponse> GetExperienceData()
+        public async Task<TelemetryResponse> GetDeviceData()
         {
+            // Simulate asynchronous work
             await Task.Delay(1);
 
-            // sample data 
-            var data = new ChartData
+            // Check if there are any telemetry data entries
+            var telemetryData = DeviceTelemetryData.DevicesTelemetry;
+            if (telemetryData == null || !telemetryData.Any())
             {
-                Labels = new[] { "Good", "Average", "Poor" },
-                Datasets = new Dataset[]
-                {
-                    new Dataset
-                    {
-                        Data = new[] { 70, 20, 10 },
-                        BackgroundColor = new[] { "#4ADE80", "#FACC15", "#EF4444" }
-                    }
-                }
-            };
+                // Handle the case where there are no telemetry data entries
+                return new TelemetryResponse { Error = new ErrorModel { Message = "No device information." } }; 
+            }
 
-            return new TelemetryResponse { Data = data };
+            // Return the first entry of telemetry data
+            return new TelemetryResponse { Entry = telemetryData.First() };
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ViadexOne.Core.Models.Responses
 {
-   public class TelemetryResponse : DataResult<Device>
+    public class DeviceResponse : DataResult<List<Device>>
     {
     }
 }

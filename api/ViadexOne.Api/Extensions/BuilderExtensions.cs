@@ -11,7 +11,7 @@ namespace ViadexOne.Api.Extensions
             {
                 app.MapOpenApi();
             }
-
+            app.UseCors("AllowSpecificOrigin");
             app.UseHttpsRedirection();
 
             app.UseMiddleware<ErrorHandlingMiddleware>(); // Add custom middleware

@@ -19,20 +19,20 @@ namespace ViadexOne.Api.Controllers
         /// Get Device Telemetry
         /// </summary>
         /// <returns></returns>
-        [HttpGet("device-telemetry")]
-        public async Task<TelemetryResponse> Get()
+        [HttpGet("devices")]
+        public async Task<DeviceResponse> Get()
         {
-            return await _telemetryService.GetDeviceTelemetry();
+            return await _telemetryService.GetDevices();
         }
 
         /// <summary>
         /// Experience Data
         /// </summary>
         /// <returns></returns>
-        [HttpGet("experience-data")]
-        public async Task<TelemetryResponse> ExperienceData()
+        [HttpGet("device-metrics")]
+        public async Task<TelemetryResponse> DevicesUsage()
         {
-            return await _telemetryService.GetExperienceData();
+            return await _telemetryService.GetDeviceData();
         }
     }
 }
